@@ -14,6 +14,18 @@ header {
     align-items: center;
 }
 
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    header {
+        /* Let the nav drop to its own line instead of squeezing
+           into the same row as the logo and title. */
+        flex-wrap: wrap;
+        padding: 0.75rem;
+        gap: 0.5rem;
+    }
+}
+/* END CLAUDE CODE */
+
 header img {
     height: 5dvh;
     min-height: fit-content;
@@ -22,11 +34,34 @@ header img {
     max-width: 10%;
 }
 
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    header img {
+        /* min-height: fit-content resolves to the image's intrinsic
+           height, which is what stretched it tall. Zero it out and let
+           width: auto derive from the fixed height to keep the ratio. */
+        min-height: 0;
+        height: 2.5rem;
+        width: auto;
+        max-width: 30%;
+        object-fit: contain;
+    }
+}
+/* END CLAUDE CODE */
+
 header h1 {
     color: #C2000B;
     font-variant-caps: small-caps;
     letter-spacing: 0.05em;
 }
+
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+/* END CLAUDE CODE */
 
 header nav {
     display: flex;
@@ -41,9 +76,33 @@ header nav {
     align-items: center;
 }
 
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    header nav {
+        /* Full-width second row. The auto left margin is what was
+           pushing it off the edge, so it has to go. */
+        flex: 1 0 100%;
+        margin: 0;
+        padding: 0.5rem 0 0;
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+}
+/* END CLAUDE CODE */
+
 header nav p {
     font-size: 1.25rem;
 }
+
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    header nav p {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+}
+/* END CLAUDE CODE */
 
 .display {
     display: flex;
@@ -55,12 +114,33 @@ header nav p {
     padding: 2rem 0rem;
 }
 
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    .display {
+        /* Stack the image above the text instead of side by side. */
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 1rem;
+    }
+}
+/* END CLAUDE CODE */
+
 .display-sidebar {
     padding: 1rem;
     background-color: #C2000B;
     color: white;
     width: 35dvw;
 }
+
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    .display-sidebar {
+        /* 35dvw was squeezing the copy into a narrow ribbon. */
+        width: 100%;
+        padding: 1rem 0 0;
+    }
+}
+/* END CLAUDE CODE */
 
 .display img {
     padding: 1rem;
@@ -69,6 +149,19 @@ header nav p {
     height: 20rem;
     max-width: 35dvw;
 }
+
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    .display img {
+        /* height: auto with a full-width box lets the browser derive
+           the height from the image's own ratio. */
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+}
+/* END CLAUDE CODE */
 
 .display-sidebar p {
     margin-top: 1rem;
@@ -86,8 +179,21 @@ header nav p {
     min-height: fit-content;
 
     min-width: 100%;
-    
+
 }
+
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    .three-column {
+        /* Stack the three values vertically and reclaim the 4rem
+           side padding, which was eating a third of a phone screen. */
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem;
+        gap: 0;
+    }
+}
+/* END CLAUDE CODE */
 
 .column {
     display: flex;
@@ -106,6 +212,20 @@ header nav p {
     min-width: 20dvw;
     max-width: 25dvw;
 }
+
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    .column {
+        /* min-width: 20dvw was the floor forcing the overlap — it has
+           to be released before width: 100% can take effect. */
+        flex: 0 0 auto;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        padding: 1rem 0;
+    }
+}
+/* END CLAUDE CODE */
 
 .column p {
     margin-top: 1rem;
@@ -154,6 +274,18 @@ header nav p {
     background-color: lightgray;
 }
 
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    .quote {
+        /* 16rem of side padding is 512px — wider than the screen — so
+           the content box collapsed and the section overflowed. 2rem
+           keeps the indented blockquote feel at double the 1rem gutter
+           the values columns use above. */
+        padding: 2.5rem 2rem;
+    }
+}
+/* END CLAUDE CODE */
+
 .quote blockquote {
     font-size: 1.5rem;
     font-style: italic;
@@ -172,6 +304,15 @@ header nav p {
 
     margin: 2rem auto;
 }
+
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    .sign-up {
+        width: 100%;
+        padding: 0 1rem;
+    }
+}
+/* END CLAUDE CODE */
 
 .email-input {
     display: flex;
@@ -194,6 +335,21 @@ header nav p {
     border-radius: 1rem;
 }
 
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    .email-input {
+        /* Message on top, input row underneath. */
+        flex-direction: column;
+        align-items: stretch;
+
+        width: 100%;
+        min-width: 0;
+
+        margin: 0;
+    }
+}
+/* END CLAUDE CODE */
+
 .email-message {
     display: flex;
     flex-direction: column;
@@ -205,6 +361,16 @@ header nav p {
     flex: 1 1 37.5%;
 }
 
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    .email-message {
+        /* Full width now that it owns its own row. */
+        flex: 0 0 auto;
+        padding: 1rem 1rem 0.5rem;
+    }
+}
+/* END CLAUDE CODE */
+
 .input-box {
     display: flex;
     flex-direction: row;
@@ -212,6 +378,17 @@ header nav p {
     padding: 1rem;
     flex: 1 1 37.5%;
 }
+
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    .input-box {
+        /* Stays flex-direction: row so the field and button remain
+           side by side, as they are on desktop. */
+        flex: 0 0 auto;
+        padding: 0.5rem 1rem 1rem;
+    }
+}
+/* END CLAUDE CODE */
 
 .input-box button {
     margin: 0rem 0rem 0rem auto;
@@ -242,6 +419,19 @@ header nav p {
     font-family: inherit;
     background-color: white;
 }
+
+/* CLAUDE CODE: RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    .input-box input {
+        /* flex-shrink was 0, pinning the field at 8rem and shoving the
+           button outside the red box. Allow it to shrink instead. */
+        flex: 1 1 auto;
+        width: auto;
+        min-width: 0;
+        margin: 0 1rem 0 0;
+    }
+}
+/* END CLAUDE CODE */
 
 .email-message p {
     margin-top: 1rem;
