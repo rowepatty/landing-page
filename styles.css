@@ -143,11 +143,12 @@ header nav p {
 /* END CLAUDE CODE */
 
 .display img {
-    padding: 1rem;
+    padding: 0rem;
     background-color: #C2000B;
 
-    height: 20rem;
+    /* height: 20rem; */
     max-width: 35dvw;
+    border-radius: 1rem;
 }
 
 /* CLAUDE CODE: RESPONSIVE WEB DESIGN */
@@ -231,6 +232,11 @@ header nav p {
     margin-top: 1rem;
 }
 
+.column h3 {
+    font-variant-caps: small-caps;
+    letter-spacing: 0.05em;
+}
+
 .separator {
     display: flex;
 
@@ -252,6 +258,11 @@ header nav p {
     border-style: solid;
     border-color: black;
     border-width: 0.25rem 0rem;
+}
+
+.separator h2 {
+    font-variant-caps: small-caps;
+    letter-spacing: 0.05em;
 }
 
 .quote {
